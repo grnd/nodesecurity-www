@@ -7,7 +7,9 @@
     "test": "cd tests; ../node_modules/.bin/nodeunit server.js",
     "start-dev": "grunt serve",
     "start-prod": "node server.js",
-    "start": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run start-prod; else npm run start-dev; fi"
+    "start": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run start-prod; else npm run start-dev; fi",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,8 @@
     "postmark": "~0.2.0",
     "rss": "^1.0.1",
     "semver": "^2.3.2",
-    "walk": "~2.3.1"
+    "walk": "~2.3.1",
+    "snyk": "^1.47.0"
   },
   "devDependencies": {
     "autoprefixer-stylus": "^0.6.0",
@@ -49,5 +52,6 @@
     "nodeunit": "~0.8.4",
     "precommit-hook": "~1.0.7",
     "yeticss": "^6.0.6"
-  }
+  },
+  "snyk": true
 }
